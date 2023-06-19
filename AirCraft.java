@@ -6,10 +6,12 @@ public class AirCraft
         boolean [][] aircraft = new boolean [30][6];
         print(aircraft);
         
+        aircraft[1][3] = false;
+        
     }
     public static void print(boolean aircraft [][])
     {
-        System.out.println("    A  B  C     D  E  F    ");
+        System.out.println(" A  B  C     D  E  F    ");
         for ( int i = 0; i < aircraft.length; i++)
         {
             for ( int j = 0; j < aircraft[i].length; j++)
@@ -32,6 +34,6 @@ public class AirCraft
                 System.out.println();
             }
         }
-        System.out.println("    A  B  C     D  E  F    ");
+        System.out.println(" A  B  C     D  E  F    ");
     }
 }       

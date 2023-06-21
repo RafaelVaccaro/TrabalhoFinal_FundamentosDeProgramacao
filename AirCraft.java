@@ -6,6 +6,17 @@ public class AirCraft //tamanho 30 FILEIRAS | 6 ASSENTOS POR FILEIRA
     private int column;
     private int line;
     private String confirmation;
+    public AirCraft()
+    {
+        this.seats = new Seats[30][6];
+        for(int i = 0; i < seats.length; i++)
+        {
+            for (int j = 0; j < seats[i].length; j++)
+            {
+                this.seats[i][j] = new Seats();
+            }
+        }
+    }
     public void sell(String command)
     {
         System.out.println(command);

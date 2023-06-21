@@ -5,7 +5,7 @@ public class AirCraftApp
     public static void main(String[] args)
     {
 
-        AirCraft aviao = new AirCraft();
+        AirCraft aircraft = new AirCraft();
         Scanner in = new Scanner(System.in);
 
         
@@ -19,17 +19,11 @@ public class AirCraftApp
         do {
             input = in.next();
             if(input.startsWith("show"))
-                //aviao.print(); vai printar aviao etc etc para proximos
-                System.out.println("*printou o aviao*");
-            else if (input.startsWith("sell"))
-                System.out.println("*voce vendeu*");
-                
-            else if (input.startsWith("buy")) {
+                aircraft.print(); //vai printar aviao etc etc para proximos        
+            else if (input.startsWith("sell")) {
                 do {
-                    buyInput = in.next();
-                    System.out.printf("voos disponiveis:\n *voo1*\n *voo2*\n *voo3*\n");
-                    if (input.startsWith("voo1"));
-                        System.out.println("*assentos:*");
+                    aircraft.sell(in.next());
+                    System.out.println("*assentos:*");
                 } while   (!input.startsWith("quit"));
             }   
                 

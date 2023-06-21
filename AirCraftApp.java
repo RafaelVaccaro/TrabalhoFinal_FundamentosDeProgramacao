@@ -4,8 +4,10 @@ public class AirCraftApp
 {
     public static void main(String[] args)
     {
+
         AirCraft aviao = new AirCraft();
         Scanner in = new Scanner(System.in);
+
         
         String input;
         String buyInput;

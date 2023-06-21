@@ -1,11 +1,12 @@
-
 import java.util.Scanner;
+
+
 public class AirCraft //tamanho 30 FILEIRAS | 6 ASSENTOS POR FILEIRA
 {
     private Seats [][] seats;
     private int column;
     private int line;
-    private String confirmation;
+  
     public AirCraft()
     {
         this.seats = new Seats[30][6];
@@ -20,12 +21,12 @@ public class AirCraft //tamanho 30 FILEIRAS | 6 ASSENTOS POR FILEIRA
     public void sell(String command)
     {
         System.out.println(command);
-        String choice = command.substring(5).toUpperCase();
+        String choice = command.substring(0).toUpperCase();
         System.out.println(choice);
-        Scanner sc = new Scanner(System.in);
         char letter = choice.charAt(0);
         int number = Integer.parseInt(choice.substring(1));
         System.out.printf("Você escolheu a fileira %d e o assento %c?%n", number, letter);
+        
         switch(letter)
         {
             case 'A':
@@ -48,53 +49,52 @@ public class AirCraft //tamanho 30 FILEIRAS | 6 ASSENTOS POR FILEIRA
                     break;
             
         }
-        System.out.println("Confirme seu assento digitando [SIM] ou [NÃO]");
+        this.line = number - 1;
+        if(this.seats[line][column].getAvailable()){
+            System.out.println("Seu assento foi reservado");
+            this.seats[line][column].setAvailable(false);
+            
+        }
         
-        confirm(sc.next());
-    }
-    public boolean confirm(String confirmation)
-    {
-        boolean status = true;
-        this.confirmation = confirmation.toUpperCase(); 
-        char c = this.confirmation.charAt(0);
-         if(c == 'S')
-         {
-             status = true;
-         }
-         else if ( c == 'N')
-         {
-             status = false;
-         }
-         return status;
     }
     public void print()
     {
         this.seats = seats;
-        System.out.println("   A  B  C     D  E  F    ");
+        System.out.println("     A  B  C     D  E  F    ");
         for ( int i = 0; i < this.seats.length; i++)
         {
-            System.out.print(i + " ");
+            if(i < 9)
+                System.out.printf("  %d ", i + 1);
+            else 
+                System.out.printf(" %d ", i + 1);
             for ( int j = 0; j < seats[i].length; j++)
             {
-                if (this.seats[i][j].getAvailable() == true) //se true! 
+                if (this.seats[i][j].getAvailable() == true) 
+                //checa se o assento está disponivel (true)
+                 
+                 
                 {
                     System.out.print("[$]");
                 }// se estiver ocupado:
                 else
                 {
-                    System.out.print("[ ]");    
+                    System.out.print("[ ]");
                 }
                 if (j == 2)
                 {
                     System.out.print("   ");
                 }
             }
+            if(i < 9)
+                System.out.printf(" %d", i + 1);
+            else 
+                System.out.printf(" %d", i + 1);
             System.out.println();
             if ( i == 11 || i == 12){
                 System.out.println();
             }
         }
-        System.out.println("    A  B  C     D  E  F    ");
+        
     }
 }       
 

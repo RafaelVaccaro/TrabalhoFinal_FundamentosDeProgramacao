@@ -11,6 +11,7 @@ public class AirCraft //tamanho 30 FILEIRAS | 6 ASSENTOS POR FILEIRA
     private Date date;
     private DateFormat dateFormat;
     private String trajectory;
+    public boolean ocupied;
     public AirCraft()
     {
         this.seats = new Seats[30][6];
@@ -27,7 +28,7 @@ public class AirCraft //tamanho 30 FILEIRAS | 6 ASSENTOS POR FILEIRA
         String choice = command.substring(0).toUpperCase();
         char letter = choice.charAt(0);
         int number = Integer.parseInt(choice.substring(1));
-        System.out.printf("Você escolheu a fileira %d e o assento %c?%n", number, letter);
+        System.out.printf("Você escolheu a fileira %d e o assento %c?%n%n", number, letter);
         
         switch(letter)
         {
@@ -52,10 +53,16 @@ public class AirCraft //tamanho 30 FILEIRAS | 6 ASSENTOS POR FILEIRA
             
         }
         this.line = number - 1;
-        if(this.seats[line][column].getAvailable()){
-            System.out.println("Seu assento foi reservado");
+        if(this.seats[line][column].getAvailable())
+        {
+            System.out.printf("Seu assento foi reservado%n%n");
             this.seats[line][column].setAvailable(false);
             
+        } 
+        else if (!this.seats[line][column].getAvailable())
+        {
+            ocupied = true;
+            System.out.printf("ESTE ASSENTO JA FOI RESERVADO.%n%n");
         }
         
     }
@@ -90,7 +97,7 @@ public class AirCraft //tamanho 30 FILEIRAS | 6 ASSENTOS POR FILEIRA
             else 
                 System.out.printf(" %d", i + 1);
             System.out.println();
-            if ( i == 11 || i == 12){
+            if ( i == 3 || i == 12){
                 System.out.println();
             }
         }

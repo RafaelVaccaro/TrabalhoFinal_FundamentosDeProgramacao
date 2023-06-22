@@ -11,11 +11,15 @@ public class Customer
     {
         this.name = name;
     }
-    
+    public String getName()
+    {
+        return this.name;
+    }
     public void setCpf(String cpf)
     {
         this.cpf = cpf;
     }
+    
     
     public String getCpf()
     {
@@ -44,7 +48,7 @@ public class Customer
     {
         if (this.cpf.length() != 11)
         {
-            throw new IllegalArgumentException("CPF DO INVÁLIDO");
+            return "Cpf Invalido, por favor favor digite novamente";
         }
         return "Cpf Valido";
     }

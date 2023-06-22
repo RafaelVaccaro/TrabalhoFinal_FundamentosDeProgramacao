@@ -29,11 +29,17 @@ public class AirCraftApp
                     
                     System.out.printf("Selecione seu assento [Letra][Num]%n");
                     aircraft.sell(in.next());
+                    
                     System.out.printf("Confirme seu assento: Responda com [Sim] ou [Nao] %n");
+                    
                     String confirmation = in.next();
                     if(confirmation.startsWith("Sim"))
                     {   
-                        System.out.printf("Assento confirmado!");    
+                        System.out.printf("Assento confirmado!%n");    
+                    }
+                    if(confirmation.startsWith("Nao"))
+                    {
+                        System.out.printf("Assento Cancelado");
                     }
                     System.out.printf("Você deseja comprar mais algum assento?%n Responda com [Sim] ou [Não]");
                     buyInput = in.next();
@@ -45,10 +51,11 @@ public class AirCraftApp
                         answer = in.next();
                     
                     }
-                    else if(buyInput.startsWith("n") || buyInput.startsWith("N")){
+                    if(buyInput.startsWith("n") || buyInput.startsWith("N")){
                         System.out.println("Para o Checkout, informe o seu cpf:");
                         customer.setCpf(in.next());
                         System.out.println(customer.validateCpf());
+                        
                     }
                 }
             }   

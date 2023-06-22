@@ -1,12 +1,16 @@
 import java.util.Scanner;
-
+import java.util.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 
 public class AirCraft //tamanho 30 FILEIRAS | 6 ASSENTOS POR FILEIRA
 {
     private Seats [][] seats;
     private int column;
     private int line;
-  
+    private Date date;
+    private DateFormat dateFormat;
+    private String trajectory;
     public AirCraft()
     {
         this.seats = new Seats[30][6];
@@ -91,6 +95,17 @@ public class AirCraft //tamanho 30 FILEIRAS | 6 ASSENTOS POR FILEIRA
             }
         }
         
+    }
+    private String flightTime() 
+    {
+	this.dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+	this.date = new Date();
+	return dateFormat.format(date);
+    }
+    private String trajectory(String t)
+    {
+        this.trajectory = t;
+        return trajectory;
     }
 }       
 

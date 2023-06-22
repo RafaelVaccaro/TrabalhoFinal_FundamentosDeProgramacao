@@ -6,7 +6,7 @@ public class Seats {
     }
 
     public boolean getAvailable() {
-        return available;
+        return this.available;
     }
 
     public void setAvailable(boolean available) {

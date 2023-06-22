@@ -11,7 +11,7 @@ public class AirCraft //tamanho 30 FILEIRAS | 6 ASSENTOS POR FILEIRA
     private Date date;
     private DateFormat dateFormat;
     private String trajectory;
-    public boolean ocupied;
+    public boolean occupied;
     public AirCraft()
     {
         this.seats = new Seats[30][6];
@@ -28,8 +28,6 @@ public class AirCraft //tamanho 30 FILEIRAS | 6 ASSENTOS POR FILEIRA
         String choice = command.substring(0).toUpperCase();
         char letter = choice.charAt(0);
         int number = Integer.parseInt(choice.substring(1));
-        System.out.printf("Você escolheu a fileira %d e o assento %c?%n%n", number, letter);
-        
         switch(letter)
         {
             case 'A':
@@ -53,19 +51,28 @@ public class AirCraft //tamanho 30 FILEIRAS | 6 ASSENTOS POR FILEIRA
             
         }
         this.line = number - 1;
-        if(this.seats[line][column].getAvailable())
-        {
-            System.out.printf("Seu assento foi reservado%n%n");
-            this.seats[line][column].setAvailable(false);
+        System.out.printf("Você escolheu a fileira %d e o assento %c?%n Responda com [Sim] ou [Nao]. %n%n", number, letter);
+
+       
+    }
+    public String confirmation(String confirm)
+    {
+        if(confirm.startsWith("Sim") || confirm.startsWith("sim")){
+            if(this.seats[line][column].getAvailable())
+            {
+                this.seats[line][column].setAvailable(false);
             
-        } 
-        else if (!this.seats[line][column].getAvailable())
-        {
-            ocupied = true;
-            System.out.printf("ESTE ASSENTO JA FOI RESERVADO.%n%n");
+            } 
+            else{
+             throw new IllegalArgumentException("Assento já reservado");   
+            }
         }
         
+        return confirm;        
     }
+    
+        
+    
     public void print()
     {
         this.seats = seats;

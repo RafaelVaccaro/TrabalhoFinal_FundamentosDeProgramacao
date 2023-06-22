@@ -20,9 +20,7 @@ public class AirCraft //tamanho 30 FILEIRAS | 6 ASSENTOS POR FILEIRA
     }
     public void sell(String command)
     {
-        System.out.println(command);
         String choice = command.substring(0).toUpperCase();
-        System.out.println(choice);
         char letter = choice.charAt(0);
         int number = Integer.parseInt(choice.substring(1));
         System.out.printf("Você escolheu a fileira %d e o assento %c?%n", number, letter);
@@ -69,10 +67,8 @@ public class AirCraft //tamanho 30 FILEIRAS | 6 ASSENTOS POR FILEIRA
                 System.out.printf(" %d ", i + 1);
             for ( int j = 0; j < seats[i].length; j++)
             {
-                if (this.seats[i][j].getAvailable() == true) 
+                if (this.seats[i][j].getAvailable() == false) 
                 //checa se o assento está disponivel (true)
-                 
-                 
                 {
                     System.out.print("[$]");
                 }// se estiver ocupado:

@@ -40,12 +40,12 @@ public class Customer
         }
         return cpfFormat;
     }
-    public String cpfValidation()
+    public String validateCpf()
     {
         if (this.cpf.length() != 11)
         {
             throw new IllegalArgumentException("CPF DO INVÁLIDO");
         }
-        return "a";
+        return "Cpf Valido";
     }
 }

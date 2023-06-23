@@ -31,10 +31,11 @@ public class AirCraftApp
 
                     System.out.printf("Selecione seu assento [Letra][Num]%n");
                     aircraft.sell(in.next());
-
+                    String confirm = in.next();
+                    
                     if (seats.getAvailable() == true)
                     {
-                        if(aircraft.confirmation(in.next()).startsWith("Sim"))
+                        if(confirm.startsWith("Sim") || confirm.startsWith("sim"))
                         {   
                             System.out.printf("Assento confirmado!%n%n");
                             System.out.printf("Você deseja comprar mais algum assento? %n Responda com [Sim] ou [Não]%n%n");

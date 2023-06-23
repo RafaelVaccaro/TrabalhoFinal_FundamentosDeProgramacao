@@ -22,7 +22,7 @@ public class AirCraft //tamanho 30 FILEIRAS | 6 ASSENTOS POR FILEIRA
             }
         }
     }
-    public void sell(String command)
+    public void buy(String command)
     {
         String choice = command.substring(0).toUpperCase();
         char letter = choice.charAt(0);

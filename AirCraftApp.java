@@ -5,11 +5,11 @@ public class AirCraftApp
     public static void main(String[] args)
     {
         Seats seats = new Seats();
-        
+
         AirCraft aircraft1 = new AirCraft();
         AirCraft aircraft2 = new AirCraft();
         AirCraft aircraft3 = new AirCraft();
-        
+
         Customer customer = new Customer();
         Scanner in = new Scanner(System.in);
         String answer;
@@ -18,7 +18,7 @@ public class AirCraftApp
         String cpfInput;
         String flightSelect;
 
-        System.out.printf("    __!__%n_____(_)_____%n   !  !  !%n%n");
+        System.out.printf("%n                    __!__%n                _____(_)_____%n                   !  !  !%n     %n");
         System.out.println("===============================================");
         System.out.println("Bem vindo a compra de passagens da 14-BIS Corp.");
         System.out.println("===============================================");
@@ -26,28 +26,27 @@ public class AirCraftApp
         System.out.println("[1] " + aircraft1.trajectory("POA-->SP ") + aircraft1.flightTime() + " 09:45-->11:20");
         System.out.println("[2] " + aircraft1.trajectory("POA-->RJ ") + aircraft1.flightTime() + " 05:30-->07:20");
         System.out.println("[3] " + aircraft1.trajectory("POA-->BSB ") + aircraft1.flightTime() + " 09:45-->12:15");
-        
-        
+
         flightSelect = in.next();
         //loop para a compra e a venda de passagens 
         do {
-            
+
             if (flightSelect.startsWith("1"))
             {
-                System.out.printf("Comandos:%n  show%n  sell%n  quit%n  ");
+                System.out.printf("Comandos:%n  show%n  buy%n  quit%n  ");
                 input = in.next();
                 if(input.startsWith("show"))
                     aircraft1.print(); //printar avião 
-    
-                else if (input.startsWith("sell")) {
+
+                else if (input.startsWith("buy")) {
                     boolean buying = true;
                     while(buying) //loop quebra apenas quando a compra é feita.
                     {
-    
+
                         System.out.printf("Selecione seu assento [Letra][Num]%n");
-                        aircraft1.sell(in.next());
+                        aircraft1.buy(in.next());
                         String confirm = in.next();
-                        
+
                         if (seats.getAvailable() == true)
                         {
                             if(confirm.startsWith("Sim") || confirm.startsWith("sim"))
@@ -62,13 +61,13 @@ public class AirCraftApp
                                     customer.setName(in.next());
                                     System.out.println(customer.getName() + ", o total de suas passagens foi de 5 reais");
                                     buying = false;      
-    
+
                                 }
                             }
                             else{
                                 System.out.printf("Parece que houve um erro... Nos desculpe! %n%n");
                                 buying = false;
-    
+
                             }
                         }
                     }
@@ -76,20 +75,20 @@ public class AirCraftApp
             }
             else if (flightSelect.startsWith("2"))
             {
-                System.out.printf("Comandos:%n  shown%n  sell%n  quit%n  ");
+                System.out.printf("Comandos:%n  show%n  buy%n  quit%n  ");
                 input = in.next();
                 if(input.startsWith("show"))
                     aircraft2.print(); //printar avião 
-    
-                else if (input.startsWith("sell")) {
+
+                else if (input.startsWith("buy")) {
                     boolean buying = true;
                     while(buying) //loop quebra apenas quando a compra é feita.
                     {
-    
+
                         System.out.printf("Selecione seu assento [Letra][Num]%n");
-                        aircraft2.sell(in.next());
+                        aircraft2.buy(in.next());
                         String confirm = in.next();
-                        
+
                         if (seats.getAvailable() == true)
                         {
                             if(confirm.startsWith("Sim") || confirm.startsWith("sim"))
@@ -104,13 +103,13 @@ public class AirCraftApp
                                     customer.setName(in.next());
                                     System.out.println(customer.getName() + ", o total de suas passagens foi de 5 reais");
                                     buying = false;       
-    
+
                                 }
                             }
                             else{
                                 System.out.printf("Parece que houve um erro... Nos desculpe! %n%n");
                                 buying = false;
-    
+
                             }
                         }
                     }
@@ -118,20 +117,20 @@ public class AirCraftApp
             }
             else if (flightSelect.startsWith("3"))
             {
-                System.out.printf("Comandos:%n  shown%n  sell%n  quit%n  ");
+                System.out.printf("Comandos:%n  show%n  buy%n  quit%n  ");
                 input = in.next();
                 if(input.startsWith("show"))
                     aircraft3.print(); //printar avião 
-    
-                else if (input.startsWith("sell")) {
+
+                else if (input.startsWith("buy")) {
                     boolean buying = true;
                     while(buying) //loop quebra apenas quando a compra é feita.
                     {
-    
+
                         System.out.printf("Selecione seu assento [Letra][Num]%n");
-                        aircraft3.sell(in.next());
+                        aircraft3.buy(in.next());
                         String confirm = in.next();
-                        
+
                         if (seats.getAvailable() == true)
                         {
                             if(confirm.startsWith("Sim") || confirm.startsWith("sim"))
@@ -146,13 +145,13 @@ public class AirCraftApp
                                     customer.setName(in.next());
                                     System.out.println(customer.getName() + ", o total de suas passagens foi de 5 reais");
                                     buying = false;      
-    
+
                                 }
                             }
                             else{
                                 System.out.printf("Parece que houve um erro... Nos desculpe! %n%n");
                                 buying = false;
-    
+
                             }
                         }
                     }

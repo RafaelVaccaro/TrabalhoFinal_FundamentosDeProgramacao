@@ -5,7 +5,11 @@ public class AirCraftApp
     public static void main(String[] args)
     {
         Seats seats = new Seats();
-        AirCraft aircraft = new AirCraft();
+        
+        AirCraft aircraft1 = new AirCraft();
+        AirCraft aircraft2 = new AirCraft();
+        AirCraft aircraft3 = new AirCraft();
+        
         Customer customer = new Customer();
         Scanner in = new Scanner(System.in);
         String answer;
@@ -22,7 +26,7 @@ public class AirCraftApp
         do {
             input = in.next();
             if(input.startsWith("show"))
-                aircraft.print(); //printar avião 
+                aircraft1.print(); //printar avião 
 
             else if (input.startsWith("sell")) {
                 boolean buying = true;
@@ -30,7 +34,7 @@ public class AirCraftApp
                 {
 
                     System.out.printf("Selecione seu assento [Letra][Num]%n");
-                    aircraft.sell(in.next());
+                    aircraft1.sell(in.next());
                     String confirm = in.next();
                     
                     if (seats.getAvailable() == true)

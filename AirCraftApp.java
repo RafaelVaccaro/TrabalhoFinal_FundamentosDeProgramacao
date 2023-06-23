@@ -37,7 +37,7 @@ public class AirCraftApp
                         if(aircraft.confirmation(in.next()).startsWith("Sim"))
                         {   
                             System.out.printf("Assento confirmado!%n%n");
-                            System.out.printf("Você deseja comprar mais algum assento? %n Responda com [Sim] ou [Não]%n%n");
+                            System.out.printf("Você deseja comprar mais algum assento? %n Responda com [Sim] ou [Nao]%n%n");
                             buyInput = in.next();
                             if(buyInput.startsWith("Nao") || buyInput.startsWith("nao")){
                                 System.out.println("Para o Checkout, informe o seu cpf e depois seu nome:");

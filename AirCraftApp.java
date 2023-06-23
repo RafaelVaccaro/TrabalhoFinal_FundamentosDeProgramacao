@@ -27,10 +27,10 @@ public class AirCraftApp
         System.out.println("[3]" + aircraft1.trajectory("POA-->BSB ") + aircraft1.flightTime() + " 09:45-->12:15");
         
         
-        
+        flightSelect = in.next();
         //loop para a compra e a venda de passagens 
         do {
-            flightSelect = in.next();
+            
             if (flightSelect.startsWith("1"))
             {
                 System.out.printf("Comandos:%n  shown%n  sell%n  quit%n  ");
@@ -55,12 +55,12 @@ public class AirCraftApp
                                 System.out.printf("Você deseja comprar mais algum assento? %n Responda com [Sim] ou [Nao]%n%n");
                                 buyInput = in.next();
                                 if(buyInput.startsWith("Nao") || buyInput.startsWith("nao")){
-                                    System.out.println("Para o Checkout, informe o seu cpf e depois seu nome:");
+                                    System.out.println("Para o Checkout, informe o seu cpf");
                                     customer.setCpf(in.next());
-        
+                                    System.out.println("Informe seu nome:");
                                     customer.setName(in.next());
                                     System.out.println(customer.getName() + ", o total de suas passagens foi de 5 reais");
-                                    buying = false;       
+                                    buying = false;      
     
                                 }
                             }
@@ -97,9 +97,9 @@ public class AirCraftApp
                                 System.out.printf("Você deseja comprar mais algum assento? %n Responda com [Sim] ou [Nao]%n%n");
                                 buyInput = in.next();
                                 if(buyInput.startsWith("Nao") || buyInput.startsWith("nao")){
-                                    System.out.println("Para o Checkout, informe o seu cpf e depois seu nome:");
+                                    System.out.println("Para o Checkout, informe o seu cpf");
                                     customer.setCpf(in.next());
-        
+                                    System.out.println("Informe seu nome:");
                                     customer.setName(in.next());
                                     System.out.println(customer.getName() + ", o total de suas passagens foi de 5 reais");
                                     buying = false;       
@@ -139,12 +139,12 @@ public class AirCraftApp
                                 System.out.printf("Você deseja comprar mais algum assento? %n Responda com [Sim] ou [Nao]%n%n");
                                 buyInput = in.next();
                                 if(buyInput.startsWith("Nao") || buyInput.startsWith("nao")){
-                                    System.out.println("Para o Checkout, informe o seu cpf e depois seu nome:");
+                                    System.out.println("Para o Checkout, informe o seu cpf");
                                     customer.setCpf(in.next());
-        
+                                    System.out.println("Informe seu nome:");
                                     customer.setName(in.next());
                                     System.out.println(customer.getName() + ", o total de suas passagens foi de 5 reais");
-                                    buying = false;       
+                                    buying = false;      
     
                                 }
                             }

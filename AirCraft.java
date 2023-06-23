@@ -109,13 +109,13 @@ public class AirCraft //tamanho 30 FILEIRAS | 6 ASSENTOS POR FILEIRA
         }
         
     }
-    private String flightTime() 
+    public String flightTime() 
     {
-    this.dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+    this.dateFormat = new SimpleDateFormat("dd/MM/yyyy");
     this.date = new Date();
     return dateFormat.format(date);
     }
-    private String trajectory(String t)
+    public String trajectory(String t)
     {
         this.trajectory = t;
         return trajectory;

@@ -16,11 +16,16 @@ public class AirCraftApp
         String input;
         String buyInput;
         String cpfInput;
+        String flightInput;
 
         System.out.printf("    __!__%n_____(_)_____%n   !  !  !%n%n");
         System.out.println("Bem vindo a compra e venda de passagens");
         System.out.println("=======================================");
-        System.out.printf("comandos:\n  show%n  sell\n  quit\n"); 
+        System.out.printf("Escolha seu voo:%n"); 
+        System.out.println("[1]" + aircraft1.trajectory("POA-->SP ") + aircraft1.flightTime() + " 09:45-->11:20");
+        System.out.println("[2]" + aircraft1.trajectory("POA-->RJ ") + aircraft1.flightTime() + " 05:30-->07:20");
+        System.out.println("[3]" + aircraft1.trajectory("POA-->BSB ") + aircraft1.flightTime() + " 09:45-->12:15");
+        
 
         //loop para a compra e a venda de passagens 
         do {

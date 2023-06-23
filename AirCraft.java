@@ -11,6 +11,8 @@ public class AirCraft //tamanho 30 FILEIRAS | 6 ASSENTOS POR FILEIRA
     private Date date;
     private DateFormat dateFormat;
     private String trajectory;
+    private String flightTime;
+    
     public AirCraft()
     {
         this.seats = new Seats[30][6];
@@ -109,15 +111,22 @@ public class AirCraft //tamanho 30 FILEIRAS | 6 ASSENTOS POR FILEIRA
         }
         
     }
-    public String flightTime() 
+    public String setFlightTime(String fTime) 
     {
-    this.dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-    this.date = new Date();
-    return dateFormat.format(date);
+        this.flightTime = fTime;
+        return flightTime;
+    }
+    public String getFlightTime()
+    {
+        return flightTime;
     }
     public String trajectory(String t)
     {
         this.trajectory = t;
+        return trajectory;
+    }
+    public String getTrajectory()
+    {
         return trajectory;
     }
 }       

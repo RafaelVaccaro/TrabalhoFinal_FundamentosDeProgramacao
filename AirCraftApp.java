@@ -40,17 +40,13 @@ public class AirCraftApp
                 }
                 
                 AirCraft selectedAircraft;
-                String selectedFlight;
-                
+               
                 if (flightSelect.equals("1")) {
                     selectedAircraft = aircraft1;
-                    selectedFlight = aircraft1.getTrajectory();
                 } else if (flightSelect.equals("2")) {
                     selectedAircraft = aircraft2;
-                    selectedFlight = aircraft2.getTrajectory();
                 } else if (flightSelect.equals("3")) {
                     selectedAircraft = aircraft3;
-                    selectedFlight = aircraft3.getTrajectory();
                 } else {
                     System.out.println("Opção inválida. Por favor, selecione uma opção válida.");
                     continue;
@@ -88,7 +84,8 @@ public class AirCraftApp
                                     customer.setCpf(in.next());
                                     System.out.println("Informe seu nome:");
                                     customer.setName(in.next());
-                                    System.out.println(customer.getName() + ", o total de suas passagens foi de 5 reais");
+                                    System.out.println(customer.getName() + ", o total de suas passagens foi de *colocar preço* reais");
+                                    System.out.printf("obrigado por comprar conosco!%n%n%n%n");
                                     buying = false;      
     
                                 }

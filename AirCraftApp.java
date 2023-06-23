@@ -19,12 +19,13 @@ public class AirCraftApp
         String flightSelect;
 
         System.out.printf("    __!__%n_____(_)_____%n   !  !  !%n%n");
-        System.out.println("Bem vindo a compra e venda de passagens");
-        System.out.println("=======================================");
+        System.out.println("===============================================");
+        System.out.println("Bem vindo a compra de passagens da 14-BIS Corp.");
+        System.out.println("===============================================");
         System.out.printf("Escolha seu voo:%n"); 
-        System.out.println("[1]" + aircraft1.trajectory("POA-->SP ") + aircraft1.flightTime() + " 09:45-->11:20");
-        System.out.println("[2]" + aircraft1.trajectory("POA-->RJ ") + aircraft1.flightTime() + " 05:30-->07:20");
-        System.out.println("[3]" + aircraft1.trajectory("POA-->BSB ") + aircraft1.flightTime() + " 09:45-->12:15");
+        System.out.println("[1] " + aircraft1.trajectory("POA-->SP ") + aircraft1.flightTime() + " 09:45-->11:20");
+        System.out.println("[2] " + aircraft1.trajectory("POA-->RJ ") + aircraft1.flightTime() + " 05:30-->07:20");
+        System.out.println("[3] " + aircraft1.trajectory("POA-->BSB ") + aircraft1.flightTime() + " 09:45-->12:15");
         
         
         flightSelect = in.next();
@@ -33,7 +34,7 @@ public class AirCraftApp
             
             if (flightSelect.startsWith("1"))
             {
-                System.out.printf("Comandos:%n  shown%n  sell%n  quit%n  ");
+                System.out.printf("Comandos:%n  show%n  sell%n  quit%n  ");
                 input = in.next();
                 if(input.startsWith("show"))
                     aircraft1.print(); //printar avião 

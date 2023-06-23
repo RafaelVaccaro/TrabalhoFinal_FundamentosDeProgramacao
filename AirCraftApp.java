@@ -42,16 +42,17 @@ public class AirCraftApp
                             if(buyInput.startsWith("Nao") || buyInput.startsWith("nao")){
                                 System.out.println("Para o Checkout, informe o seu cpf e depois seu nome:");
                                 customer.setCpf(in.next());
-                                System.out.println(customer.validateCpf());
+    
                                 customer.setName(in.next());
                                 System.out.println(customer.getName() + ", o total de suas passagens foi de 5 reais");
                                 buying = false;       
+
                             }
                         }
                         else{
                             System.out.printf("Parece que houve um erro... Nos desculpe! %n%n");
                             buying = false;
-                            
+
                         }
                     }
                 }

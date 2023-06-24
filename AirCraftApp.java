@@ -59,12 +59,15 @@ public class AirCraftApp
                 
                 input = in.next();
                 
-                if(input.startsWith("mostrar"))
+                if(input.startsWith("mostrar")){
+                    selectedAircraft.read();    
                     selectedAircraft.print();
+                }
                 else if (input.startsWith("comprar"))
                 {
-                    boolean buying = true;
                     selectedAircraft.read();
+                    boolean buying = true;
+                    
                     while (buying) 
                     {
                         selectedAircraft.print();
@@ -76,9 +79,9 @@ public class AirCraftApp
                         {
                             if(confirm.startsWith("Sim") || confirm.startsWith("sim"))
                             {   
-                                selectedAircraft.write();
                                 selectedAircraft.confirmation(confirm);
                                 System.out.printf("Assento confirmado!%n%n");
+                                selectedAircraft.write();
                                 System.out.printf("Você deseja comprar mais algum assento? %n Responda com [Sim] ou [Nao]%n%n");
                                 buyInput = in.next();
                                 

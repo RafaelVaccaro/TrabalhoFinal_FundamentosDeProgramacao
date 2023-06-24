@@ -103,6 +103,29 @@ public class AirCraftApp
                                 } else {
                                     System.out.printf(customer.getName() + ", o total de suas passagens foi de " + ((selectedAircraft.getPrice())/2) + " R$");
                                     System.out.printf("obrigado por comprar conosco!%n%n%n%n");
+
+                                    System.out.println("Para o Checkout, informe o seu cpf");
+                                    customer.setCpf(in.next());
+                                    System.out.println("Informe seu primeiro nome:");
+                                    customer.setName(in.next());
+                                    System.out.println("Informe sua idade");
+                                    customer.setAge(in.nextInt());
+                                    if(customer.getAge() >= 18)
+                                    {
+                                        System.out.printf(customer.getName() + ", o total de suas passagens foi de " + selectedAircraft.getPrice() + " R$");
+                                        System.out.printf("obrigado por comprar conosco!%n%n%n%n");
+                                        buying = false;
+                                    } else {
+                                        System.out.printf(customer.getName() + ", o total de suas passagens foi de " + ((selectedAircraft.getPrice())/2) + " R$");
+                                        System.out.printf("obrigado por comprar conosco!%n%n%n%n");
+                                        buying = false;
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                    System.out.printf("Parece que houve um erro... Nos desculpe! %n%n");
+
                                     buying = false;
                                 }
                                 System.out.printf(customer.getName() + ", o total de suas passagens foi de " + selectedAircraft.getPrice() + " R$");
@@ -120,15 +143,16 @@ public class AirCraftApp
                         }
                     }
                 }
-            }
+            
             System.out.println("Gostaria de comprar mais passagens?");
             finalizeConfirmation = in.next();
             if (finalizeConfirmation.startsWith("n") || finalizeConfirmation.startsWith("N"))
             {
                 break;
-            }
         }
+    }
         aircraft1.ClearCmd();
         System.out.printf("obrigado por comprar conosco!%n%n%n%n");
-    }
-}
+    }  
+ }
+

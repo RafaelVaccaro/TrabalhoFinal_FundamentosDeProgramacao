@@ -116,6 +116,11 @@ public class AirCraft //tamanho 30 FILEIRAS | 6 ASSENTOS POR FILEIRA
                 //checa se o assento está disponivel (true)
                 {
                     System.out.print("[$]");
+                    //precificador
+                    if (i <= 3)
+                        price += 1500;
+                    else
+                        price += 700;
                 }// se estiver ocupado:
                 else
                 {
@@ -125,15 +130,7 @@ public class AirCraft //tamanho 30 FILEIRAS | 6 ASSENTOS POR FILEIRA
                 {
                     System.out.print("   ");
                 }
-                //precificador
-                if (i <= 3 && this.seats[i][j].getAvailable() == false) //primeira classe
-                {
-                    setPrice(1500);
-                }
-                else if (i <= 3 && this.seats[i][j].getAvailable() == false) //resto
-                {
-                    setPrice(700);
-                }
+                
             }
             if(i < 9)
                 System.out.printf(" %d", i + 1);
@@ -143,13 +140,9 @@ public class AirCraft //tamanho 30 FILEIRAS | 6 ASSENTOS POR FILEIRA
             if ( i == 3 || i == 12){
                 System.out.println();
             }
+            this.price = price;
         }
         
-    }
-    private int setPrice(int priceIn)
-    {
-        this.price += priceIn;
-        return price;
     }
     public int getPrice()
     {

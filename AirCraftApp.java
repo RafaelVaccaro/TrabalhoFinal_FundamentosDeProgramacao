@@ -18,7 +18,8 @@ public class AirCraftApp
             String buyInput;
             String cpfInput;
             String flightSelect;
-    
+            
+            aircraft1.ClearCmd();
             System.out.printf("%n                    __!__%n                _____(_)_____%n                   !  !  !%n     %n");
             System.out.println("===============================================");
             System.out.println("Bem vindo a compra de passagens da 14-BIS Corp.");
@@ -35,6 +36,7 @@ public class AirCraftApp
                 
                 if (flightSelect.equals("4"))
                 {
+                    aircraft1.ClearCmd();
                     System.out.println("Obrigado por Comprar conosco!");
                     break;
                 }
@@ -100,7 +102,6 @@ public class AirCraftApp
                             }
                         }
                     }
-                    
                 }
             }
     }

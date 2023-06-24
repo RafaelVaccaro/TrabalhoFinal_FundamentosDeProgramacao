@@ -173,5 +173,12 @@ public class AirCraft //tamanho 30 FILEIRAS | 6 ASSENTOS POR FILEIRA
     {
         return trajectory;
     }
+    public void ClearCmd()
+    {
+        for (int i=0; i<=100; i++)
+        {
+            System.out.println("");
+        }
+    }
 }       
 

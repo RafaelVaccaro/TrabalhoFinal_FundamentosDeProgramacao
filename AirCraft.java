@@ -15,7 +15,7 @@ public class AirCraft //tamanho 30 FILEIRAS | 6 ASSENTOS POR FILEIRA
     private DateFormat dateFormat;
     private String trajectory;
     private String flightTime;
-    public int setPrice;
+    public int price;
     
     public AirCraft()
     {
@@ -126,9 +126,13 @@ public class AirCraft //tamanho 30 FILEIRAS | 6 ASSENTOS POR FILEIRA
                     System.out.print("   ");
                 }
                 //precificador
-                if (i >= 3 && this.seats[i][j].getAvailable() == false) //primeira classe
+                if (i <= 3 && this.seats[i][j].getAvailable() == false) //primeira classe
                 {
-                    //ValorDaCompra += 1200;
+                    setPrice(1500);
+                }
+                else if (i <= 3 && this.seats[i][j].getAvailable() == false) //resto
+                {
+                    setPrice(700);
                 }
             }
             if(i < 9)
@@ -142,14 +146,14 @@ public class AirCraft //tamanho 30 FILEIRAS | 6 ASSENTOS POR FILEIRA
         }
         
     }
-    private int setPrice(int setPrice)
+    private int setPrice(int priceIn)
     {
-        this.setPrice = setPrice;
-        return setPrice;
+        this.price += priceIn;
+        return price;
     }
     public int getPrice()
     {
-        return setPrice;
+        return price;
     }
     public String setFlightTime(String fTime) 
     {

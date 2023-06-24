@@ -2,6 +2,9 @@ import java.util.Scanner;
 import java.util.Date;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.io.FileInputStream;
+import java.io.PrintStream;
+import java.io.FileOutputStream;
 
 public class AirCraft //tamanho 30 FILEIRAS | 6 ASSENTOS POR FILEIRA
 {
@@ -56,6 +59,17 @@ public class AirCraft //tamanho 30 FILEIRAS | 6 ASSENTOS POR FILEIRA
 
        
     }
+    public void write() throws Exception {
+        PrintStream file = new PrintStream(new  FileOutputStream("datas.txt"));
+        for (int i = 0; i < this.seats.length; i++) {
+            for (int j = 0; j < this.seats[i].length; j++) {            
+                    file.print(this.seats[i][j].getAvailable()+" ");
+            }
+            file.println();
+        }
+        file.close();
+    }    
+    
     public String confirmation(String confirm)
     {
         if(confirm.startsWith("Sim") || confirm.startsWith("sim")){
@@ -71,7 +85,18 @@ public class AirCraft //tamanho 30 FILEIRAS | 6 ASSENTOS POR FILEIRA
         
         return confirm;        
     }
-    
+    public void read() throws Exception {
+        FileInputStream file = new FileInputStream("datas.txt");
+        Scanner in = new Scanner(file);
+        for (int i = 0; i < this.seats.length; i++) {
+            for (int j = 0; j < this.seats[i].length; j++) {   
+                this.seats[i][j] = new Seats();
+                this.seats[i][j].setAvailable(in.nextBoolean());
+            }
+        }
+        in.close();
+        file.close();            
+    }
         
     
     public void print()

@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class AirCraftApp
 {
-        public static void main(String[] args)
+        public static void main(String[] args) throws Exception
         {
             Seats seats = new Seats();
     
@@ -62,6 +62,7 @@ public class AirCraftApp
                 else if (input.startsWith("buy"))
                 {
                     boolean buying = true;
+                    selectedAircraft.read();
                     while (buying) 
                     {
                         selectedAircraft.print();
@@ -73,6 +74,7 @@ public class AirCraftApp
                         {
                             if(confirm.startsWith("Sim") || confirm.startsWith("sim"))
                             {   
+                                selectedAircraft.write();
                                 selectedAircraft.confirmation(confirm);
                                 System.out.printf("Assento confirmado!%n%n");
                                 System.out.printf("Você deseja comprar mais algum assento? %n Responda com [Sim] ou [Nao]%n%n");

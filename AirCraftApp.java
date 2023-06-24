@@ -59,7 +59,7 @@ public class AirCraftApp
                 System.out.printf("Comandos:%n  mostrar%n  comprar%n  sair%n");
                 
                 input = in.next();
-                
+                 
                 if(input.startsWith("mostrar")){
                     selectedAircraft.read(number);    
                     selectedAircraft.print();

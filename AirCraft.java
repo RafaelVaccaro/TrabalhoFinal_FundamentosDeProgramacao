@@ -90,7 +90,7 @@ public class AirCraft //tamanho 30 FILEIRAS | 6 ASSENTOS POR FILEIRA
             file.close();
         }   
         if(number == 2){
-            file = new PrintStream(new  FileOutputStream("datas.txt"));
+            file = new PrintStream(new  FileOutputStream("datas2.txt"));
             for (int i = 0; i < this.seats.length; i++) {
                 for (int j = 0; j < this.seats[i].length; j++) {            
                     file.print(this.seats[i][j].getAvailable()+" ");
@@ -142,7 +142,7 @@ public class AirCraft //tamanho 30 FILEIRAS | 6 ASSENTOS POR FILEIRA
             in.close();
             file.close();            
         }
-        if(number  == 2){
+        if(number  == 2){ 
             file = new FileInputStream("datas2.txt");
             Scanner in = new Scanner(file);
             for (int i = 0; i < this.seats.length; i++) {

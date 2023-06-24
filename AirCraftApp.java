@@ -112,11 +112,11 @@ public class AirCraftApp
                                     customer.setAge(in.nextInt());
                                     if(customer.getAge() >= 18)
                                     {
-                                        System.out.printf(customer.getName() + ", o total de suas passagens foi de " + selectedAircraft.getPrice() + " R$");
+                                        System.out.printf(customer.getName() + ", o total de suas passagens foi de R$ " + selectedAircraft.getPrice()  );
                                         System.out.printf("obrigado por comprar conosco!%n%n%n%n");
                                         buying = false;
-                                    } else {
-                                        System.out.printf(customer.getName() + ", o total de suas passagens foi de " + ((selectedAircraft.getPrice())/2) + " R$");
+                                    } else if(customer.getAge() < 18){
+                                        System.out.printf(customer.getName() + ", o total de suas passagens foi de R$ " + ((selectedAircraft.getPrice())/2));
                                         System.out.printf("obrigado por comprar conosco!%n%n%n%n");
                                         buying = false;
                                     }
@@ -128,7 +128,7 @@ public class AirCraftApp
 
                                     buying = false;
                                 }
-                                System.out.printf(customer.getName() + ", o total de suas passagens foi de " + selectedAircraft.getPrice() + " R$");
+                                
                                 System.out.printf("obrigado por comprar conosco!%n%n%n%n");
                                 buying = false;
                                 selectedAircraft.resetPrice();
@@ -154,5 +154,5 @@ public class AirCraftApp
         aircraft1.ClearCmd();
         System.out.printf("obrigado por comprar conosco!%n%n%n%n");
     }  
- }
+}
 

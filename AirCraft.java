@@ -15,8 +15,9 @@ public class AirCraft //tamanho 30 FILEIRAS | 6 ASSENTOS POR FILEIRA
     private DateFormat dateFormat;
     private String trajectory;
     private String flightTime;
-    public int price = 0;
-    
+    public int price;
+
+
     public AirCraft()
     {
         this.seats = new Seats[30][6];
@@ -28,6 +29,7 @@ public class AirCraft //tamanho 30 FILEIRAS | 6 ASSENTOS POR FILEIRA
             }
         }
     }
+
     public void buy(String command)
     {
         String choice = command.substring(0).toUpperCase();
@@ -36,24 +38,24 @@ public class AirCraft //tamanho 30 FILEIRAS | 6 ASSENTOS POR FILEIRA
         switch(letter)
         {
             case 'A':
-                    this.column = 0;
-                    break;
+                this.column = 0;
+                break;
             case 'B':
-                    this.column = 1;
-                    break;
+                this.column = 1;
+                break;
             case 'C':
-                    this.column = 2;
-                    break;
+                this.column = 2;
+                break;
             case 'D':
-                    this.column = 3;
-                    break;
+                this.column = 3;
+                break;
             case 'E':
-                    this.column = 4;
-                    break;
+                this.column = 4;
+                break;
             case 'F':
-                    this.column = 5;
-                    break;
-            
+                this.column = 5;
+                break;
+
         }
         this.line = number - 1;
         
@@ -73,48 +75,101 @@ public class AirCraft //tamanho 30 FILEIRAS | 6 ASSENTOS POR FILEIRA
         
         System.out.printf("Você escolheu a fileira %d e o assento %c?%n Responda com [Sim] ou [Nao]. %n%n", number, letter);
 
-       
     }
-    public void write() throws Exception {
-        PrintStream file = new PrintStream(new  FileOutputStream("datas.txt"));
-        for (int i = 0; i < this.seats.length; i++) {
-            for (int j = 0; j < this.seats[i].length; j++) {            
+
+    public void write(int number) throws Exception {
+        PrintStream file;
+        if(number == 1){
+            file = new PrintStream(new  FileOutputStream("datas.txt"));
+            for (int i = 0; i < this.seats.length; i++) {
+                for (int j = 0; j < this.seats[i].length; j++) {            
                     file.print(this.seats[i][j].getAvailable()+" ");
+                }
+                file.println();
             }
-            file.println();
-        }
-        file.close();
-    }    
-    
+            file.close();
+        }   
+        if(number == 2){
+            file = new PrintStream(new  FileOutputStream("datas.txt"));
+            for (int i = 0; i < this.seats.length; i++) {
+                for (int j = 0; j < this.seats[i].length; j++) {            
+                    file.print(this.seats[i][j].getAvailable()+" ");
+                }
+                file.println();
+            }
+            file.close();
+        }    
+        if(number == 3){
+            file = new PrintStream(new  FileOutputStream("datas3.txt"));
+            for (int i = 0; i < this.seats.length; i++) {
+                for (int j = 0; j < this.seats[i].length; j++) {            
+                    file.print(this.seats[i][j].getAvailable()+" ");
+                }
+                file.println();
+            }
+            file.close();
+        }    
+    }
+
     public String confirmation(String confirm)
     {
         if(confirm.startsWith("Sim") || confirm.startsWith("sim")){
             if(this.seats[line][column].getAvailable())
             {
                 this.seats[line][column].setAvailable(false);
-            
+
             } 
             else{
-             throw new IllegalArgumentException("Assento já reservado");   
+                throw new IllegalArgumentException("Assento já reservado");   
             }
         }
-        
+
         return confirm;        
     }
-    public void read() throws Exception {
-        FileInputStream file = new FileInputStream("datas.txt");
-        Scanner in = new Scanner(file);
-        for (int i = 0; i < this.seats.length; i++) {
-            for (int j = 0; j < this.seats[i].length; j++) {   
-                this.seats[i][j] = new Seats();
-                this.seats[i][j].setAvailable(in.nextBoolean());
+
+    public void read(int number) throws Exception {
+        FileInputStream file;
+        if(number == 1){
+            file = new FileInputStream("datas.txt");
+            Scanner in = new Scanner(file);
+            for (int i = 0; i < this.seats.length; i++) {
+                for (int j = 0; j < this.seats[i].length; j++) {   
+                    this.seats[i][j] = new Seats();
+                    this.seats[i][j].setAvailable(in.nextBoolean());
+                }
             }
+
+            in.close();
+            file.close();            
         }
-        in.close();
-        file.close();            
-    }
-        
-    
+        if(number  == 2){
+            file = new FileInputStream("datas2.txt");
+            Scanner in = new Scanner(file);
+            for (int i = 0; i < this.seats.length; i++) {
+                for (int j = 0; j < this.seats[i].length; j++) {   
+                    this.seats[i][j] = new Seats();
+                    this.seats[i][j].setAvailable(in.nextBoolean());
+                }
+            }
+
+            in.close();
+            file.close();            
+        }
+        if(number  == 3){
+            file = new FileInputStream("datas3.txt");
+            Scanner in = new Scanner(file);
+            for (int i = 0; i < this.seats.length; i++) {
+                for (int j = 0; j < this.seats[i].length; j++) {   
+                    this.seats[i][j] = new Seats();
+                    this.seats[i][j].setAvailable(in.nextBoolean());
+                }
+            }
+
+            in.close();
+            file.close();            
+        }
+    }    
+
     public void print()
     {
         this.seats = seats;
@@ -140,7 +195,7 @@ public class AirCraft //tamanho 30 FILEIRAS | 6 ASSENTOS POR FILEIRA
                 {
                     System.out.print("   ");
                 }
-                
+
             }
             if(i < 9)
                 System.out.printf(" %d", i + 1);
@@ -152,9 +207,11 @@ public class AirCraft //tamanho 30 FILEIRAS | 6 ASSENTOS POR FILEIRA
             }
             this.price = price;
         }
-        
+
     }
+
     public void resetPrice()
+
     {
         price = 0;
     }
@@ -166,24 +223,29 @@ public class AirCraft //tamanho 30 FILEIRAS | 6 ASSENTOS POR FILEIRA
     public int getPrice() {
         return price;
     }
+
     public String setFlightTime(String fTime) 
     {
         this.flightTime = fTime;
         return flightTime;
     }
+
     public String getFlightTime()
     {
         return flightTime;
     }
+
     public String trajectory(String t)
     {
         this.trajectory = t;
         return trajectory;
     }
+
     public String getTrajectory()
     {
         return trajectory;
     }
+
     public void ClearCmd()
     {
         for (int i=0; i<=100; i++)

@@ -18,6 +18,7 @@ public class AirCraftApp
             String buyInput;
             String cpfInput;
             String flightSelect;
+            String finalizeConfirmation;
             
             aircraft1.ClearCmd();
             System.out.printf("%n                    __!__%n                _____(_)_____%n                   !  !  !%n     %n");
@@ -38,7 +39,6 @@ public class AirCraftApp
                 if (flightSelect.equals("4"))
                 {
                     aircraft1.ClearCmd();
-                    System.out.println("Obrigado por Comprar conosco!");
                     break;
                 }
                 
@@ -59,7 +59,7 @@ public class AirCraftApp
                 System.out.printf("Comandos:%n  mostrar%n  comprar%n  sair%n");
                 
                 input = in.next();
-                
+                 
                 if(input.startsWith("mostrar")){
                     selectedAircraft.read(number);    
                     selectedAircraft.print();
@@ -92,6 +92,7 @@ public class AirCraftApp
                                     customer.setCpf(in.next());
                                     System.out.println("Informe seu primeiro nome:");
                                     customer.setName(in.next());
+<<<<<<< HEAD
                                     System.out.println("Informe sua idade");
                                     customer.setAge(in.nextInt());
                                     if(customer.getAge() >= 18)
@@ -104,6 +105,13 @@ public class AirCraftApp
                                         System.out.printf("obrigado por comprar conosco!%n%n%n%n");
                                         buying = false;
                                     }
+=======
+                                    System.out.printf(customer.getName() + ", o total de suas passagens foi de " + selectedAircraft.getPrice() + " R$");
+                                    System.out.printf("obrigado por comprar conosco!%n%n%n%n");
+                                    buying = false;
+                                    selectedAircraft.resetPrice();
+    
+>>>>>>> 2595733bfb6a209c9c2b0a8df89f64b3d666c0c4
                                 }
                             }
                             else
@@ -115,6 +123,14 @@ public class AirCraftApp
                         }
                     }
                 }
+                System.out.println("Gostaria de comprar mais passagens?");
+                finalizeConfirmation = in.next();
+                if (finalizeConfirmation.startsWith("n") || finalizeConfirmation.startsWith("N"))
+                {
+                    break;
+                }
             }
+            aircraft1.ClearCmd();
+            System.out.printf("obrigado por comprar conosco!%n%n%n%n");
     }
 }

@@ -55,13 +55,13 @@ public class AirCraftApp
                 }
                 
                 System.out.println("Voce escolheu o voo: " + selectedAircraft.getTrajectory());
-                System.out.printf("Comandos:%n  show%n  buy%n  quit%n");
+                System.out.printf("Comandos:%n  mostrar%n  comprar%n  sair%n");
                 
                 input = in.next();
                 
-                if(input.startsWith("show"))
+                if(input.startsWith("mostrar"))
                     selectedAircraft.print();
-                else if (input.startsWith("buy"))
+                else if (input.startsWith("comprar"))
                 {
                     boolean buying = true;
                     selectedAircraft.read();

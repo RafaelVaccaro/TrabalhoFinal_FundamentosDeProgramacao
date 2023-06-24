@@ -9,7 +9,7 @@ public class AirCraftApp
             AirCraft aircraft1 = new AirCraft();
             AirCraft aircraft2 = new AirCraft();
             AirCraft aircraft3 = new AirCraft();
-    
+            int number;
             Customer customer = new Customer();
             Scanner in = new Scanner(System.in);
             
@@ -33,7 +33,8 @@ public class AirCraftApp
                 System.out.println("[4] Sair");
                 
                 flightSelect = in.next();
-                
+                String choice = flightSelect.substring(0);
+                number = Integer.parseInt(choice.substring(0));
                 if (flightSelect.equals("4"))
                 {
                     aircraft1.ClearCmd();
@@ -60,12 +61,12 @@ public class AirCraftApp
                 input = in.next();
                 
                 if(input.startsWith("mostrar")){
-                    selectedAircraft.read();    
+                    selectedAircraft.read(number);    
                     selectedAircraft.print();
                 }
                 else if (input.startsWith("comprar"))
                 {
-                    selectedAircraft.read();
+                    selectedAircraft.read(number);
                     boolean buying = true;
                     
                     while (buying) 
@@ -81,7 +82,7 @@ public class AirCraftApp
                             {   
                                 selectedAircraft.confirmation(confirm);
                                 System.out.printf("Assento confirmado!%n%n");
-                                selectedAircraft.write();
+                                selectedAircraft.write(number);
                                 System.out.printf("Você deseja comprar mais algum assento? %n Responda com [Sim] ou [Nao]%n%n");
                                 buyInput = in.next();
                                 

@@ -18,6 +18,7 @@ public class AirCraftApp
             String buyInput;
             String cpfInput;
             String flightSelect;
+            String finalizeConfirmation;
             
             aircraft1.ClearCmd();
             System.out.printf("%n                    __!__%n                _____(_)_____%n                   !  !  !%n     %n");
@@ -37,7 +38,6 @@ public class AirCraftApp
                 if (flightSelect.equals("4"))
                 {
                     aircraft1.ClearCmd();
-                    System.out.println("Obrigado por Comprar conosco!");
                     break;
                 }
                 
@@ -93,7 +93,8 @@ public class AirCraftApp
                                     customer.setName(in.next());
                                     System.out.printf(customer.getName() + ", o total de suas passagens foi de " + selectedAircraft.getPrice() + " R$");
                                     System.out.printf("obrigado por comprar conosco!%n%n%n%n");
-                                    buying = false;      
+                                    buying = false;
+                                    selectedAircraft.resetPrice();
     
                                 }
                             }
@@ -106,6 +107,14 @@ public class AirCraftApp
                         }
                     }
                 }
+                System.out.println("Gostaria de comprar mais passagens?");
+                finalizeConfirmation = in.next();
+                if (finalizeConfirmation.startsWith("n") || finalizeConfirmation.startsWith("N"))
+                {
+                    break;
+                }
             }
+            aircraft1.ClearCmd();
+            System.out.printf("obrigado por comprar conosco!%n%n%n%n");
     }
 }

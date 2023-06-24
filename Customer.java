@@ -2,11 +2,22 @@ public class Customer
 {
     private String name;
     private String cpf;
+    private int age;
     public Customer()
     {
 
     }
+    
+    public void setAge(int age)
+    {
+        this.age = age;
+    }
 
+    public int getAge()
+    {
+        return this.age;
+    }
+    
     public void setName(String name)
     {
         this.name = name;

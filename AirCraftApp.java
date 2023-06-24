@@ -92,10 +92,18 @@ public class AirCraftApp
                                     customer.setCpf(in.next());
                                     System.out.println("Informe seu primeiro nome:");
                                     customer.setName(in.next());
-                                    System.out.printf(customer.getName() + ", o total de suas passagens foi de " + selectedAircraft.getPrice() + " R$");
-                                    System.out.printf("obrigado por comprar conosco!%n%n%n%n");
-                                    buying = false;      
-    
+                                    System.out.println("Informe sua idade");
+                                    customer.setAge(in.nextInt());
+                                    if(customer.getAge() >= 18)
+                                    {
+                                        System.out.printf(customer.getName() + ", o total de suas passagens foi de " + selectedAircraft.getPrice() + " R$");
+                                        System.out.printf("obrigado por comprar conosco!%n%n%n%n");
+                                        buying = false;
+                                    } else {
+                                        System.out.printf(customer.getName() + ", o total de suas passagens foi de " + ((selectedAircraft.getPrice())/2) + " R$");
+                                        System.out.printf("obrigado por comprar conosco!%n%n%n%n");
+                                        buying = false;
+                                    }
                                 }
                             }
                             else

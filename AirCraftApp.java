@@ -84,7 +84,7 @@ public class AirCraftApp
                                 {
                                     System.out.println("Para o Checkout, informe o seu cpf");
                                     customer.setCpf(in.next());
-                                    System.out.println("Informe seu nome:");
+                                    System.out.println("Informe seu primeiro nome:");
                                     customer.setName(in.next());
                                     System.out.println(customer.getName() + ", o total de suas passagens foi de *colocar preço* reais");
                                     System.out.printf("obrigado por comprar conosco!%n%n%n%n");
